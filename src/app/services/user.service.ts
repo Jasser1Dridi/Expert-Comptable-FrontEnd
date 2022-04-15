@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { observable, Observable } from 'rxjs';
 const API_URL = 'http://localhost:8080/api/test/';
 
 @Injectable({
@@ -13,14 +13,29 @@ export class UserService {
     return this.http.get(API_URL + 'all', { responseType: 'text' });
   }
   getUserBoard(): Observable<any> {
-    return this.http.get(API_URL + 'user', { responseType: 'text' });
+    return this.http.get(API_URL + 'Client', { responseType: 'text' });
   }
+
+getAchat(): Observable<any> {
+return this.http.get(API_URL + 'Client' ,{responseType: 'text'} ) ;
+}
+
+
+getvente(): Observable<any> {
+  return this.http.get(API_URL + 'Client' ,{responseType: 'text'} ) ;
+  }
+  
+  getPaix(): Observable<any> {
+    return this.http.get(API_URL + 'Client' ,{responseType: 'text'} ) ;
+    }
+
+
   getModeratorBoard(): Observable<any> {
-    return this.http.get(API_URL + 'mod', { responseType: 'text' });
+    return this.http.get(API_URL + 'Comptable', { responseType: 'text' });
   }
   getAdminBoard(): Observable<any> {
     return this.http.get(API_URL + 'admin', { responseType: 'text' });
   }
-
+ 
 
 }

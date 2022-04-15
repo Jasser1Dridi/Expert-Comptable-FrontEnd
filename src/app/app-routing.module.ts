@@ -11,21 +11,31 @@ import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { PaixComponent } from './paix/paix.component';
 import { VenteComponent } from './vente/vente.component';
 import { AchatComponent } from './achat/achat.component';
+import { RegisterComptableComponent } from './register-comptable/register-comptable.component';
+import { ListcomptableComponent } from './listcomptable/listcomptable.component';
+import { DemandeComponent } from './demande/demande.component';
+
 
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'registerc', component: RegisterComptableComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'user', component: BoardUserComponent },
-  { path: 'mod', component: BoardModeratorComponent },
+  { path: 'Client', component: BoardUserComponent },
+  { path: 'Comptable', component: BoardModeratorComponent },
   { path: 'admin', component: BoardAdminComponent },
+  { path: 'lcomptable', component: ListcomptableComponent },
 
   { path: 'achat', component: AchatComponent },
   { path: 'vente', component: VenteComponent },
   { path: 'paix', component: PaixComponent },
+  { path: 'demande/:id',  component: DemandeComponent},
+
   
+
+
 
 
 

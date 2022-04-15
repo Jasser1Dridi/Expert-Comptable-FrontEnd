@@ -18,6 +18,10 @@ export class AchatComponent implements OnInit {
     fileInfos?: Observable<any>;
     constructor(private uploadService: FileUploadService) { }
   ngOnInit(): void {
+    // recuperer la liste des comptables associe a cet client
+    // requete "/api/auth/client/comptable"
+    // mettre la liste des comptables dans un tableau pour afficher dans liste deroulante
+    // comptable.user.id != comptable.id
     throw new Error('Method not implemented.');
   }
     selectFile(event: any): void {

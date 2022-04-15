@@ -9,7 +9,7 @@
         novalidate
       >
         <div class="form-group">
-          <label for="username">Username</label>
+          <label for="username">Entrer votre nom : </label>
           <input
             type="text"
             class="form-control"
@@ -23,11 +23,11 @@
             role="alert"
             *ngIf="username.errors && f.submitted"
           >
-            Username is required!
+            Ce champs est obligatoire 
           </div>
         </div>
         <div class="form-group">
-          <label for="password">Password</label>
+          <label for="password">Entrer Votre Mot de passe : </label>
           <input
             type="password"
             class="form-control"
@@ -42,7 +42,7 @@
             role="alert"
             *ngIf="password.errors && f.submitted"
           >
-            <div *ngIf="password.errors['required']">Password is required</div>
+            <div *ngIf="password.errors['required']">Ce champs est obligatoire!!</div>
             <div *ngIf="password.errors['minlength']">
               Password must be at least 6 characters
             </div>
@@ -59,12 +59,12 @@
             role="alert"
             *ngIf="f.submitted && isLoginFailed"
           >
-            Login failed: {{ errorMessage }}
+            connexion echouée {{ errorMessage }}
           </div>
         </div>
       </form>
       <div class="alert alert-success" *ngIf="isLoggedIn">
-        Logged in as {{ roles }}.
+        vous-etes connecter entant que : {{ roles }}.
       </div>
     </div>
   </div>

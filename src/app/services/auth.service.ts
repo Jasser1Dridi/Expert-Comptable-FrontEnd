@@ -9,6 +9,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AuthService {
+  
   constructor(private http: HttpClient) { }
   login(username: string, password: string): Observable<any> {
     return this.http.post(AUTH_API + 'signin', {
@@ -16,10 +17,24 @@ export class AuthService {
       password
     }, httpOptions);
   }
+
+
+
+
+
+
+
   register(form : any): Observable<any> {
     
     return this.http.post(AUTH_API + 'signup', form, httpOptions);
   }
+ 
+  registerc(form : any ): Observable<any>{
+
+    return this.http.post(AUTH_API + 'signup_comp', form, httpOptions);
+
+  }
+
 }
   
 

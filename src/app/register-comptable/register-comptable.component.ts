@@ -1,42 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-
 import { AuthService } from '../services/auth.service';
-import { FileUploadService } from '../services/file-upload.service';
-
-
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: 'app-register-comptable',
+  templateUrl: './register-comptable.component.html',
+  styleUrls: ['./register-comptable.component.css']
 })
-export class RegisterComponent implements OnInit {
-  
+export class RegisterComptableComponent implements OnInit {
+
   form: any = {
     username: null,
     email: null,
     password: null,
-    nom_entreprise : null,
+    numero_telephone : null,
+    adresse : null,
+    ecole_sperieur: null,
   };
-
-
   isSuccessful = false;
   isSignUpFailed = false;
   errorMessage = '';
-  constructor(private authService: AuthService,  ) { }
-  
-  
+
+  constructor(private authService: AuthService, ) { }
+
   ngOnInit(): void {
-
-
-
   }
-  onSubmit(): void {
 
-   
-    const { username, email, password , nom_entreprise } = this.form;
+  onSubmit(): void {
+    const { username, email, password , numero_telephone, adresse , ecole_sperieur } = this.form;
     console.log(this.form)
-    this.authService.register(this.form).subscribe({
+    this.authService.registerc(this.form).subscribe({
       next: data => {
         console.log(data);
         this.isSuccessful = true;
@@ -48,5 +39,7 @@ export class RegisterComponent implements OnInit {
       }
     });
   }
+
+
 
 }

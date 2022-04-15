@@ -17,6 +17,11 @@ import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { AchatComponent } from './achat/achat.component';
 import { VenteComponent } from './vente/vente.component';
 import { PaixComponent } from './paix/paix.component';
+import { RegisterComptableComponent } from './register-comptable/register-comptable.component';
+import { ListcomptableComponent } from './listcomptable/listcomptable.component';
+import { DemandeComponent } from './demande/demande.component';
+
+
 
 
 
@@ -32,7 +37,13 @@ import { PaixComponent } from './paix/paix.component';
     BoardUserComponent,
     AchatComponent,
     VenteComponent,
-    PaixComponent
+    PaixComponent,
+    RegisterComptableComponent,
+    ListcomptableComponent,
+    DemandeComponent,
+    
+    
+    
    
 
   ],
@@ -43,7 +54,8 @@ import { PaixComponent } from './paix/paix.component';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers:  [authInterceptorProviders],
+  providers:  [authInterceptorProviders
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

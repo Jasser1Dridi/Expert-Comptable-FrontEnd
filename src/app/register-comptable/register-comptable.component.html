@@ -45,35 +45,6 @@
             email
             #email="ngModel"
           />
-
-
-
-
-
-          <div class="form-group">
-            <label for="nom_entreprise">Enter votre nom d'entreprise</label>
-            <input
-              type="nom_entreprise"
-              class="form-control"
-              name="nom_entreprise"
-              [(ngModel)]="form.nom_entreprise"
-              required
-              nom_entreprise
-              #nom_entreprise="ngModel"
-            />
-
-
-</div>
-
-
-
-
-
-
-
-
-
-
           <div class="alert-danger" *ngIf="email.errors && f.submitted">
             <div *ngIf="email.errors['required']">Email est obligatoire </div>
             <div *ngIf="email.errors['email']">
@@ -81,6 +52,63 @@
             </div>
           </div>
         </div>
+
+
+
+        <div class="form-group">
+            <label for="numero_telephone">entrer votre numéro de téléphone :</label>
+            <input
+              type="text"
+              class="form-control"
+              name="numero_telephone"
+              [(ngModel)]="form.numero_telephone"
+              required
+              minlength="3"
+              maxlength="20"
+              #numero_telephone="ngModel"
+            />
+        </div>
+
+
+            <div class="form-group">
+                <label for="adresse">entrer votre adresse :</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="adresse"
+                  [(ngModel)]="form.adresse"
+                  required
+                  minlength="3"
+                  maxlength="20"
+                  #adresse="ngModel"
+                />
+
+
+          </div>
+
+          <div class="form-group">
+            <label for="ecole_sperieur">entrer votre ecole superieur :</label>
+            <input
+              type="text"
+              class="form-control"
+              name="ecole_sperieur"
+              [(ngModel)]="form.ecole_sperieur"
+              required
+              minlength="3"
+              maxlength="20"
+              #ecole_sperieur="ngModel"
+            />
+
+
+      </div>
+
+
+
+
+
+
+
+
         <div class="form-group">
           <label for="password">mot de passe </label>
           <input

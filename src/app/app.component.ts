@@ -12,6 +12,10 @@ export class AppComponent {
   isLoggedIn = false;
   showAdminBoard = false;
   showModeratorBoard = false;
+  showAchat= false;
+  showVente=false;
+  showPaix=false;
+  showBoardUser=false;
   username?: string;
   
   constructor(private tokenStorageService: TokenStorageService) { }
@@ -20,9 +24,14 @@ export class AppComponent {
     if (this.isLoggedIn) {
       const user = this.tokenStorageService.getUser();
       this.roles = user.roles;
+      this.showAchat= this.roles.includes('ROLE_Client');
       this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
-      this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
+      this.showModeratorBoard = this.roles.includes('ROLE_Comptable');
+      this.showPaix= this.roles.includes('ROLE_Client');
+      this.showVente= this.roles.includes('ROLE_Client');
+      this.showBoardUser= this.roles.includes('ROLE_Client');
       this.username = user.username;
+
     }
   }
   logout(): void {

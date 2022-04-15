@@ -1,6 +1,6 @@
 <div id="app">
   <nav class="navbar navbar-expand navbar-dark bg-dark">
-    <a href="#" class="navbar-brand">Assistant</a>
+    <a href="#" class="navbar-brand">Assistant </a>
     <ul class="navbar-nav mr-auto" routerLinkActive="active">
       <li class="nav-item">
         <a href="/home" class="nav-link" routerLink="home">Home </a>
@@ -9,18 +9,21 @@
         <a href="/admin" class="nav-link" routerLink="admin">Admin Board</a>
       </li>
       <li class="nav-item" *ngIf="showModeratorBoard">
-        <a href="/mod" class="nav-link" routerLink="mod">Moderator Board</a>
+        <a href="/comp" class="nav-link" routerLink="Comptable">Comptable Board</a>
       </li>
-      <li class="nav-item">
-        <a href="/user" class="nav-link" *ngIf="isLoggedIn" routerLink="user">User</a>
+      <li class="nav-item" *ngIf=showBoardUser>
+        <a href="/Client" class="nav-link" *ngIf="isLoggedIn" routerLink="Client">Client Board</a>
       </li>
     </ul>
     <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
       <li class="nav-item">
-        <a href="/register" class="nav-link" routerLink="register">Sign Up</a>
+        <a href="/register" class="nav-link" routerLink="register">Inscription Client </a>
       </li>
       <li class="nav-item">
-        <a href="/login" class="nav-link" routerLink="login">Login</a>
+        <a href="/registerc" class="nav-link" routerLink="registerc">Inscription Comptable</a>
+      </li>
+      <li class="nav-item">
+        <a href="/login" class="nav-link" routerLink="login">Connexion</a>
       </li>
     </ul>
     <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
@@ -29,20 +32,20 @@
       </li>
       
       
-      <li class="nav-item">
+      <li class="nav-item"     *ngIf="showPaix"  >
         <a href="/achat" class="nav-link" routerLink="achat">achat</a>
       </li>
       
       
       
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="showVente">
         <a href="/vente" class="nav-link" routerLink="vente">vente</a>
       </li>
       
       
       
       
-      <li class="nav-item">
+      <li class="nav-item"    *ngIf="showPaix">
         <a href="/paix" class="nav-link" routerLink="paix">paix</a>
       </li>
       
@@ -61,7 +64,7 @@
       
       
       <li class="nav-item">
-        <a href class="nav-link" (click)="logout()">LogOut</a>
+        <a href class="nav-link" (click)="logout()">Déconnexion</a>
       </li>
     </ul>
   </nav>
