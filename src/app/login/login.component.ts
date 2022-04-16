@@ -5,7 +5,7 @@ import { TokenStorageService } from '../services/token-storage.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css','./../../assets/ExternalCss.css']
 })
 export class LoginComponent implements OnInit {
 
@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getUser().roles;
-        
+
         this.reloadPage();
       },
       error: err => {

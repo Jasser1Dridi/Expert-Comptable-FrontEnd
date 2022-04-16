@@ -8,21 +8,21 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./listcomptable.component.css']
 })
 export class ListcomptableComponent implements OnInit {
-  
+
   comp!: any[];
   private _route: any;
-  
 
-  constructor( 
+
+  constructor(
       private  httpClient: HttpClient,
-      
+
       ) { }
 
-     
+
 
   ngOnInit(): void {
     this.getComptaple();
-    
+
   }
   getComptaple(){
     this.httpClient.get<any>('http://localhost:8080/api/auth/comptable').subscribe(
@@ -33,13 +33,13 @@ export class ListcomptableComponent implements OnInit {
     );
   }
 
- 
-    
+
+
 
   }
 
-  
-  
+
+
 
 
 

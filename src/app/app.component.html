@@ -1,4 +1,69 @@
+<nav class="top-bar hide-for-print" aria-label="Main navigation" style=" background-color:#659DBD">
+  <div class="top-bar-left">
+
+    <ul class="menu mainnav show-for-large" routerLinkActive="active">
+      <li><a href="#" class="navbar-brand">Assistant </a></li>
+      <li > <a href="/home" class="nav-link" routerLink="home">Home </a></li>
+      <li *ngIf="showAdminBoard"> <a href="/admin" class="nav-link" routerLink="admin">Admin Board</a></li>
+      <li  *ngIf="showModeratorBoard"> <a href="/comp" class="nav-link" routerLink="Comptable">Comptable Board</a></li>
+      <li *ngIf=showBoardUser><a href="/Client" class="nav-link" *ngIf="isLoggedIn" routerLink="Client">Client Board</a></li>
+
+     </ul>    </div>
+
+  <div class="top-bar-right">
+
+    <ul class="menu">
+
+      <li style="margin-left:20px">
+        <a routerLink="register" class="button  primary " *ngIf="!isLoggedIn">
+          Inscription Client               </a>
+      </li>
+      <li style="margin-left:20px">
+        <a routerLink="registerc"class="button  primary " *ngIf="!isLoggedIn">
+          Inscription Comptable               </a>
+      </li>
+
+
+      <li >
+        <a   routerLink="login" *ngIf="!isLoggedIn">Connexion</a>
+      </li>
+      <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+        <li class="nav-item">
+          <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
+        </li>
+
+
+        <li class="nav-item"     *ngIf="showPaix"  >
+          <a href="/achat" class="nav-link" routerLink="achat">achat</a>
+        </li>
+
+
+
+        <li class="nav-item" *ngIf="showVente">
+          <a href="/vente" class="nav-link" routerLink="vente">vente</a>
+        </li>
+
+
+
+
+        <li class="nav-item"    *ngIf="showPaix">
+          <a href="/paix" class="nav-link" routerLink="paix">paix</a>
+        </li>
+=
+        <li class="nav-item">
+          <a href class="nav-link" (click)="logout()">Déconnexion</a>
+        </li>
+      </ul>
+
+    </ul>
+  </div>
+</nav>
+
+
+
+
 <div id="app">
+  <!--
   <nav class="navbar navbar-expand navbar-dark bg-dark">
     <a href="#" class="navbar-brand">Assistant </a>
     <ul class="navbar-nav mr-auto" routerLinkActive="active">
@@ -30,45 +95,46 @@
       <li class="nav-item">
         <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
       </li>
-      
-      
+
+
       <li class="nav-item"     *ngIf="showPaix"  >
         <a href="/achat" class="nav-link" routerLink="achat">achat</a>
       </li>
-      
-      
-      
+
+
+
       <li class="nav-item" *ngIf="showVente">
         <a href="/vente" class="nav-link" routerLink="vente">vente</a>
       </li>
-      
-      
-      
-      
+
+
+
+
       <li class="nav-item"    *ngIf="showPaix">
         <a href="/paix" class="nav-link" routerLink="paix">paix</a>
       </li>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       <li class="nav-item">
         <a href class="nav-link" (click)="logout()">Déconnexion</a>
       </li>
     </ul>
   </nav>
-  <div class="container">
+
+!-->
     <router-outlet></router-outlet>
-  </div>
+
 </div>

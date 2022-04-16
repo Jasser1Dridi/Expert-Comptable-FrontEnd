@@ -8,10 +8,10 @@ import { FileUploadService } from '../services/file-upload.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css','./../../assets/ExternalCss.css']
 })
 export class RegisterComponent implements OnInit {
-  
+
   form: any = {
     username: null,
     email: null,
@@ -24,8 +24,8 @@ export class RegisterComponent implements OnInit {
   isSignUpFailed = false;
   errorMessage = '';
   constructor(private authService: AuthService,  ) { }
-  
-  
+
+
   ngOnInit(): void {
 
 
@@ -33,7 +33,7 @@ export class RegisterComponent implements OnInit {
   }
   onSubmit(): void {
 
-   
+
     const { username, email, password , nom_entreprise } = this.form;
     console.log(this.form)
     this.authService.register(this.form).subscribe({

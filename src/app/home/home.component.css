@@ -1,0 +1,22 @@
+.CustomSlider
+{
+  height:500px;
+}
+.CustomSliderImages
+{
+  height:500px;
+}
+.clientSection
+{
+  background-color: #212529 !important;
+}
+.comptableSection
+{
+ background-color:  #575153 !important;
+}
+.shrink:hover
+{
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8);
+}

@@ -1,6 +1,7 @@
+<!--
 <div class="col-md-12">
     <div class="card card-container">
-      
+
       <form
         *ngIf="!isSuccessful"
         name="form"
@@ -30,10 +31,10 @@
             </div>
           </div>
         </div>
-       
 
-        
-          
+
+
+
   <div class="form-group">
           <label for="email">Enter votre Email</label>
           <input
@@ -64,15 +65,6 @@
 
 
 </div>
-
-
-
-
-
-
-
-
-
 
           <div class="alert-danger" *ngIf="email.errors && f.submitted">
             <div *ngIf="email.errors['required']">Email est obligatoire </div>
@@ -111,3 +103,148 @@
       </div>
     </div>
   </div>
+!-->
+<div style="  background-color: #fcfcfc;padding-top:100px;"class ="contentcontainer" id="mainContent" tabindex="-1" aria-label="Easy LMS Main content">
+<div class="row">
+  <div class="column">
+    <article>
+      <div class="focus">
+
+        <div id="loginCard" class="card card--1">
+          <header class="card__header">
+            <div class="card__title">
+                <h1>Inscription client </h1>
+            </div>
+          </header>
+          <div class="card__body">
+            <form id="LoginField"
+                  *ngIf="!isSuccessful"
+                  name="form"
+                  (ngSubmit)="f.form.valid && onSubmit()"
+                  #f="ngForm"
+                  novalidate>
+              <fieldset>
+                <div>
+                  <div class="formcontrol formcontrol--materialize field-loginform-email required">
+                    <div class="formcontrol__inner"><label class="formcontrol__label" for="loginform-nom">Entrer votre nom</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="username"
+                        [(ngModel)]="form.username"
+                        required
+                        minlength="3"
+                        maxlength="20"
+                        #username="ngModel"
+                        id="loginform-nom"
+
+                        aria-required="true">
+                      <div class="alert-danger" *ngIf="username.errors && f.submitted">
+                        <div *ngIf="username.errors['required']">le nom est obligatoire</div>
+                        <div *ngIf="username.errors['minlength']">
+                          Username must be at least 3 characters
+                        </div>
+                        <div *ngIf="username.errors['maxlength']">
+                          Username must be at most 20 characters
+                        </div>
+                      </div>
+                  </div>
+                  <div>
+                    <div class="formcontrol formcontrol--materialize field-loginform-email required">
+                      <div class="formcontrol__inner"><label class="formcontrol__label" for="loginform-email">Enter votre Email</label>
+                        <input
+
+                          id="loginform-email"
+                          type="email"
+                          class="form-control"
+                          name="email"
+                          [(ngModel)]="form.email"
+                          required
+                          email
+                          #email="ngModel"
+
+
+                        >
+
+                        <div class="alert-danger" *ngIf="email.errors && f.submitted">
+                          <div *ngIf="email.errors['required']">Email est obligatoire </div>
+                          <div *ngIf="email.errors['email']">
+                            Email must be a valid email address
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+
+                    <div>
+                      <div class="formcontrol formcontrol--materialize field-loginform-email required">
+                        <div class="formcontrol__inner"><label class="formcontrol__label" for="loginform-nomd'entrerpise">Enter votre nom d'Entreprise</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="nom_entreprise"
+                            [(ngModel)]="form.nom_entreprise"
+                            required
+                            nom_entreprise
+                            #nom_entreprise="ngModel"
+
+
+                          >
+
+
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <div>
+                      <div class="formcontrol formcontrol--materialize field-loginform-email required">
+                        <div class="formcontrol__inner"><label class="formcontrol__label" for="loginform-password">Enter votre password</label>
+                          <input
+                            id="loginform-password"
+                            type="password"
+                            class="form-control"
+                            name="password"
+                            [(ngModel)]="form.password"
+                            required
+                            minlength="6"
+                            #password="ngModel"
+                          >
+                          <div class="alert-danger" *ngIf="password.errors && f.submitted">
+                            <div *ngIf="password.errors['required']">le mot de passe est obligatoire </div>
+                            <div *ngIf="password.errors['minlength']">
+                              Password must be at least 6 characters
+                            </div>
+                          </div>
+                          <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+                            Signup failed!<br />{{ errorMessage }}
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                </div>
+                </div>
+              </fieldset>
+
+              <button type="submit" class="button round expanded">s'inscrire</button>
+            </form>
+            <div class="alert alert-success" *ngIf="isSuccessful">
+              Your registration is successful!
+            </div>
+          </div>
+
+
+        </div>
+
+
+
+      </div>
+
+
+    </article>
+  </div>
+</div>
+</div>

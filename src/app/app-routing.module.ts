@@ -23,17 +23,17 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'registerc', component: RegisterComptableComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'Client', component: BoardUserComponent },
+  { path: 'Client', component: BoardUserComponent , children:[{path:'listComptable' ,component: ListcomptableComponent}] },
   { path: 'Comptable', component: BoardModeratorComponent },
   { path: 'admin', component: BoardAdminComponent },
-  { path: 'lcomptable', component: ListcomptableComponent },
+  //{ path: 'lcomptable', component: ListcomptableComponent },
 
   { path: 'achat', component: AchatComponent },
   { path: 'vente', component: VenteComponent },
   { path: 'paix', component: PaixComponent },
   { path: 'demande/:id',  component: DemandeComponent},
 
-  
+
 
 
 
@@ -41,7 +41,7 @@ const routes: Routes = [
 
 
   { path: '', redirectTo: 'home', pathMatch: 'full' }
-  
+
 ];
 
 @NgModule({

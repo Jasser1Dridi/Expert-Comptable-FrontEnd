@@ -3,7 +3,7 @@ import { AuthService } from '../services/auth.service';
 @Component({
   selector: 'app-register-comptable',
   templateUrl: './register-comptable.component.html',
-  styleUrls: ['./register-comptable.component.css']
+  styleUrls: ['./register-comptable.component.css','./../../assets/ExternalCss.css']
 })
 export class RegisterComptableComponent implements OnInit {
 
