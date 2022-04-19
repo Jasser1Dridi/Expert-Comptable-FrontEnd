@@ -14,8 +14,8 @@ import { AchatComponent } from './achat/achat.component';
 import { RegisterComptableComponent } from './register-comptable/register-comptable.component';
 import { ListcomptableComponent } from './listcomptable/listcomptable.component';
 import { DemandeComponent } from './demande/demande.component';
-
-
+import {ListDemandeClientComponent} from "./list-demande-client/list-demande-client.component";
+import {ListDemandeComptablComponent} from "./list-demande-comptabl/list-demande-comptabl.component";
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -23,8 +23,12 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'registerc', component: RegisterComptableComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'Client', component: BoardUserComponent , children:[{path:'listComptable' ,component: ListcomptableComponent}] },
-  { path: 'Comptable', component: BoardModeratorComponent },
+  { path: 'Client', component: BoardUserComponent ,
+    children:[{path:'listComptable' ,component: ListcomptableComponent},
+      {path:'listDemande',component:ListDemandeClientComponent}] },
+  { path: 'Comptable', component: BoardModeratorComponent,
+    children: [{path:'listDemande',component: ListDemandeComptablComponent}]
+  },
   { path: 'admin', component: BoardAdminComponent },
   //{ path: 'lcomptable', component: ListcomptableComponent },
 
@@ -32,6 +36,7 @@ const routes: Routes = [
   { path: 'vente', component: VenteComponent },
   { path: 'paix', component: PaixComponent },
   { path: 'demande/:id',  component: DemandeComponent},
+
 
 
 

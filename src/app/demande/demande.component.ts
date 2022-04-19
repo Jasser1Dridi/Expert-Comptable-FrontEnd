@@ -10,45 +10,40 @@ import { TokenStorageService } from '../services/token-storage.service';
   styleUrls: ['./demande.component.css']
 })
 export class DemandeComponent implements OnInit {
- 
- 
+
+
  comptable!: { id: string; username: string; };
 
-  constructor( 
+  constructor(
   private route: ActivatedRoute ,
   ){}
 
 ngOnInit(): void {
- this.comptable = { 
+ this.comptable = {
     id: this.route.snapshot.params['id'],
-    username:this.route.snapshot.params['username'],
-    
-  
-  
-  
-  
-  };
-    
-  
-
- 
-    }
-   
-   
-    
+    username:this.route.snapshot.params['username']};}
 
 
+  onSumbit()
+  {
 
-   
   }
-  
-  
-      
-    
 
 
 
-  
+
+
+
+
+  }
+
+
+
+
+
+
+
+
 
 
 

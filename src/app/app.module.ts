@@ -20,6 +20,9 @@ import { PaixComponent } from './paix/paix.component';
 import { RegisterComptableComponent } from './register-comptable/register-comptable.component';
 import { ListcomptableComponent } from './listcomptable/listcomptable.component';
 import { DemandeComponent } from './demande/demande.component';
+import { ListDemandeClientComponent } from './list-demande-client/list-demande-client.component';
+import { ListDemandeComptablComponent } from './list-demande-comptabl/list-demande-comptabl.component';
+import { ListFichiersComptableComponent } from './list-fichiers-comptable/list-fichiers-comptable.component';
 
 
 
@@ -41,6 +44,9 @@ import { DemandeComponent } from './demande/demande.component';
     RegisterComptableComponent,
     ListcomptableComponent,
     DemandeComponent,
+    ListDemandeClientComponent,
+    ListDemandeComptablComponent,
+    ListFichiersComptableComponent,
     
     
     

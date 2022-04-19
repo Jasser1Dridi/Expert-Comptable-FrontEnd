@@ -290,13 +290,13 @@
                   </div>
                 </fieldset>
 
-                <button type="submit" class="button round expanded">s'inscrire</button>
+                <button type="submit" class="button round expanded" (click)="onSubmit()">s'inscrire</button>
               </form>
-              <div class="alert alert-success" *ngIf="isSuccessful">
-                Your registration is successful!
-              </div>
-            </div>
 
+            </div>
+            <div style="height: 100px" class="alert alert-danger"  *ngIf="isSignUpFailed">
+              <h3> {{errorMessage}}</h3>
+            </div>
 
           </div>
 

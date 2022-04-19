@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 
 import { AuthService } from '../services/auth.service';
 import { FileUploadService } from '../services/file-upload.service';
+import {Router} from "@angular/router";
+import {TokenStorageService} from "../services/token-storage.service";
 
 
 @Component({
@@ -11,7 +13,7 @@ import { FileUploadService } from '../services/file-upload.service';
   styleUrls: ['./register.component.css','./../../assets/ExternalCss.css']
 })
 export class RegisterComponent implements OnInit {
-
+  roles: string[] = [];
   form: any = {
     username: null,
     email: null,
@@ -23,7 +25,7 @@ export class RegisterComponent implements OnInit {
   isSuccessful = false;
   isSignUpFailed = false;
   errorMessage = '';
-  constructor(private authService: AuthService,  ) { }
+  constructor(private authService: AuthService,private rout :Router,private tokenStorage: TokenStorageService  ) { }
 
 
   ngOnInit(): void {
@@ -38,9 +40,22 @@ export class RegisterComponent implements OnInit {
     console.log(this.form)
     this.authService.register(this.form).subscribe({
       next: data => {
+        this.authService.login(username, password).subscribe({
+          next: data=> {
+               this.roles = this.tokenStorage.getUser().roles;
+                this.tokenStorage.saveToken(data.accessToken);
+                console.log(this.roles = this.tokenStorage.getUser().roles)
+               console.log(this.tokenStorage.getToken());
+               this.tokenStorage.saveUser(data);
+               this.rout.navigate(['/Comptable']);
+               this.isSignUpFailed = false;
+         //   this.isLoggedIn = true
+          }});
         console.log(data);
-        this.isSuccessful = true;
-        this.isSignUpFailed = false;
+
+
+
+
       },
       error: err => {
         this.errorMessage = err.error.message;

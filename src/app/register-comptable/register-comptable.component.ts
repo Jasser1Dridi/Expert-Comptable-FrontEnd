@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
+import {Router} from "@angular/router";
 @Component({
   selector: 'app-register-comptable',
   templateUrl: './register-comptable.component.html',
@@ -19,7 +20,7 @@ export class RegisterComptableComponent implements OnInit {
   isSignUpFailed = false;
   errorMessage = '';
 
-  constructor(private authService: AuthService, ) { }
+  constructor(private authService: AuthService,private rout : Router ) { }
 
   ngOnInit(): void {
   }
@@ -30,8 +31,8 @@ export class RegisterComptableComponent implements OnInit {
     this.authService.registerc(this.form).subscribe({
       next: data => {
         console.log(data);
-        this.isSuccessful = true;
         this.isSignUpFailed = false;
+        this.rout.navigate(['/Comptable']);
       },
       error: err => {
         this.errorMessage = err.error.message;
