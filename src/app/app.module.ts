@@ -24,7 +24,6 @@ import { ListDemandeClientComponent } from './list-demande-client/list-demande-c
 import { ListDemandeComptablComponent } from './list-demande-comptabl/list-demande-comptabl.component';
 import { ListFichiersComptableComponent } from './list-fichiers-comptable/list-fichiers-comptable.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatDialogModule} from '@angular/material/dialog';
 import { UploadFilesClientComponent } from './upload-files-client/upload-files-client.component';
 import { UploadFileClientUploadingComponent } from './upload-file-client-uploading/upload-file-client-uploading.component';
 import { EspaceMessagerieComponent } from './espace-messagerie/espace-messagerie.component';

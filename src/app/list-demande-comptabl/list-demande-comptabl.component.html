@@ -15,7 +15,7 @@
       <tr style="background: #d2c7ff">
 
 
-        <th class="center"> <i class="fa-solid fa-user" style="margin-right: 6px"></i><b> id Client </b></th>
+        <th class="center"> <i class="fa-solid fa-user" style="margin-right: 6px"></i><b> id Demande </b></th>
         <th class="center"><i class="fa-solid fa-user" style="margin-right: 6px"></i><b>Nom Client</b></th>
         <th class="center"><i class="fa-solid fa-clock" style="margin-right: 6px"></i>  <b>Duree </b></th>
         <th class="center"><i class="fa-solid fa-clock" style="margin-right: 6px"></i> <b>Date Debut</b> </th>
@@ -28,7 +28,8 @@
         <td class="center "> <span>{{demande.id}}</span></td>
         <td class="center"> <span>{{demande.client.username}}</span></td>
         <td class="center"><span>{{demande.duree}} ans</span></td>
-        <td class="center"><span>{{demande.dateD.substring(0,16).replace("T", " ") }}</span></td>
+        <td class="center" *ngIf="demande.dateD ==null"><span>--</span></td>
+        <td class="center"*ngIf="demande.dateD !=null"><span>{{demande.dateD.substring(0,16).replace("T", " ") }}</span></td>
         <td class="center"*ngIf="demande.dateAC !=null"><span>{{demande.dateAC.substring(0,16).replace("T", " ")}}</span></td>
         <td class="center" *ngIf="demande.dateAC==null"> <span>--</span></td>
         <td class="center" *ngIf="demande.etat==1" style="color:darkgreen"> <span>Accepté</span></td>

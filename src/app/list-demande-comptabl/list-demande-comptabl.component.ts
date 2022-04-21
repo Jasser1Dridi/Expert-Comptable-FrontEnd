@@ -40,7 +40,24 @@ export class ListDemandeComptablComponent implements OnInit {
 
   getAllDemandeForComptable(id:number)
 {
-  this.userService.GetList_Comptable_Associated_With_Comptable(id).subscribe(value => {this.listDemande=value;console.log(value)});
+  this.userService.GetList_Comptable_Associated_With_Comptable(id).subscribe(value => {
+    
+    this.listDemande=value;
+    this.listDemande.forEach((element: { [x: string]: Object; id: number; }) => {
+      this.userService.getUserNameByIdDemande(element.id).subscribe(value =>{element['client']=value})
+     
+      
+    });
+    
+    console.log(value)});
 
+}
+
+getUserNameByIdDemande(id:number)
+{
+  this.userService.getUserNameByIdDemande(id)
+  {
+
+  }
 }
 }
