@@ -41,13 +41,14 @@ export class RegisterComponent implements OnInit {
     this.authService.register(this.form).subscribe({
       next: data => {
         this.authService.login(username, password).subscribe({
-          next: data=> {
+          next: data1=> {
+            console.log(data1)
                this.roles = this.tokenStorage.getUser().roles;
-                this.tokenStorage.saveToken(data.accessToken);
+                this.tokenStorage.saveToken(data1.accessToken);
                 console.log(this.roles = this.tokenStorage.getUser().roles)
                console.log(this.tokenStorage.getToken());
-               this.tokenStorage.saveUser(data);
-               this.rout.navigate(['/Comptable']);
+               this.tokenStorage.saveUser(data1);
+               this.rout.navigate(['/Client']).then(value => { window.location.reload()});
                this.isSignUpFailed = false;
          //   this.isLoggedIn = true
           }});

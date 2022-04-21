@@ -2,3 +2,13 @@
 {
   text-align: center
 }
+.color
+{
+  color:blueviolet;
+
+}
+.color:hover
+{
+  color:darkslateblue;
+
+}

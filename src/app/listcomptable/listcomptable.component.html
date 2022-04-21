@@ -1,5 +1,5 @@
 <br>
-
+<br><br>
 <div class="container">
 <section class="panel">
 
@@ -9,113 +9,36 @@
 
  <br>
  <br>
-    <table class="table table-striped table-advance table-hover border">
-        <tbody>
-            <tr>
-
-            <th></th>
-            <th class="center"> <i class="icon_profile"></i>Username</th>
-            <th class="center"><i class="icon_pin_alt"></i>Email</th>
-            <th class="center"><i class="icon_calendar"></i>Adresse</th>
-            <th class="center"> <i class="icon_mail_alt"></i>Numero Telephone</th>
-            <th class="center" ><i class="icon_mobile"></i>Ecole Superieur</th>
-            <th class="center"><i class="icon_cogs"></i> Action</th>
-
-            </tr>
-            <tr >
-              <td><i class="fa fa-table"></i></td>
-              <td class="center"> <span>name</span></td>
-              <td class="center"><span>foulen.fouleni@gmail.com</span></td>
-              <td class="center"><span>Manouba</span></td>
-              <td class="center"><span>29328152</span></td>
-              <td class="center"><span>FSJEGJ</span></td>
-              <td class="center">
-                <button class="btn btn-success"  [routerLink]="['/demande',4]" >
-
-
-
-                  envoyer une demande
-
-
-
-                </button>
-
-
-              </td>
-            </tr>
-            <tr >
-              <td><i class="fa fa-table"></i></td>
-              <td class="center"><span>name</span></td>
-              <td class="center"><span>foulen.fouleni@gmail.com</span></td>
-              <td class="center"><span>Manouba</span></td>
-              <td class="center"><span>29328152</span></td>
-              <td class="center"><span>FSJEGJ</span></td>
-              <td class="center">
-                <button class="btn btn-success"  [routerLink]="['/demande']" >
-
-
-
-                  envoyer une demande
-
-
-
-                </button>
-
-
-              </td>
-            </tr>
-            <tr >
-              <td><i class="fa fa-table"></i></td>
-              <td class="center"><span>name</span></td>
-              <td class="center"><span>foulen.fouleni@gmail.com</span></td>
-              <td class="center"><span>Manouba</span></td>
-              <td class="center"><span>29328152</span></td>
-              <td class="center"><span>FSJEGJ</span></td>
-              <td class="center">
-                <button  class="btn btn-success"  [routerLink]="['/demande']" >
-
-
-
-                  envoyer une demande
-
-
-
-                </button>
-
-
-              </td>
-            </tr>
-        <tr *ngFor="let comptable of comp">
-            <td><i class="fa fa-table"></i></td>
-            <td><span>{{comptable.username}}</span></td>
-            <td><span>{{comptable.email}}</span></td>
-            <td><span>{{comptable.adresse}}</span></td>
-            <td><span>{{comptable.numero_telephone}}</span></td>
-            <td><span>{{comptable.ecole_sperieur}}</span></td>
-            <td>
-                <button class="btn btn-success" [routerLink]="['/demande', comptable.id]">
-
-                  envoyer une demande
-
-
-
-                </button>
-
-
-              </td>
 
 
 
 
+<table class="table table-striped table-advance table-hover border">
+  <tbody>
+  <tr style="background: #d2c7ff">
 
 
-        </tr>
+    <th class="center"> <i class="fa-solid fa-user" style="margin-right: 6px"></i><b> User Name </b></th>
+    <th class="center"><i class="fa-solid fa-envelope" style="margin-right: 6px"></i><b>Email</b></th>
+    <th class="center"><i class="fa-solid fa-location-pin" style="margin-right: 6px"></i>  <b>Adresse </b></th>
+    <th class="center"><i class="fa-solid fa-phone" style="margin-right: 6px"></i> <b>Numero Telephone</b> </th>
+    <th class="center"><i class="fa-solid fa-graduation-cap" style="margin-right: 6px"></i> <b>Ecole Superieur </b></th>
+    <th class="center"><i class="fa-solid fa-computer-mouse" style="margin-right: 6px"></i> <b>Action</b></th>
+  </tr>
+  <tr *ngFor="let comptable of comp">
 
+    <td class="center"> <span>{{comptable.username}}</span></td>
+    <td class="center"><span>{{comptable.email}}</span></td>
+    <td class="center"><span>{{comptable.adresse}}</span></td>
+    <td class="center"><span>{{comptable.numero_telephone}}</span></td>
+    <td class="center"><span>{{comptable.ecole_sperieur}}</span></td>
+    <td class="cell100 column6 center">
+      <button [routerLink]="['/demande', comptable.id]" > <i class="fa-solid fa-envelope fa-xl center color "   alt="Envoyer Demande"></i> </button>
+    </td>
 
+  </tr>
 
-
-
-        </tbody>
-    </table>
+  </tbody>
+</table>
 </section>
 </div>

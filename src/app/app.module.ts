@@ -19,10 +19,15 @@ import { VenteComponent } from './vente/vente.component';
 import { PaixComponent } from './paix/paix.component';
 import { RegisterComptableComponent } from './register-comptable/register-comptable.component';
 import { ListcomptableComponent } from './listcomptable/listcomptable.component';
-import { DemandeComponent } from './demande/demande.component';
+import {DemandeComponent} from './demande/demande.component';
 import { ListDemandeClientComponent } from './list-demande-client/list-demande-client.component';
 import { ListDemandeComptablComponent } from './list-demande-comptabl/list-demande-comptabl.component';
 import { ListFichiersComptableComponent } from './list-fichiers-comptable/list-fichiers-comptable.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDialogModule} from '@angular/material/dialog';
+import { UploadFilesClientComponent } from './upload-files-client/upload-files-client.component';
+import { UploadFileClientUploadingComponent } from './upload-file-client-uploading/upload-file-client-uploading.component';
+import { EspaceMessagerieComponent } from './espace-messagerie/espace-messagerie.component';
 
 
 
@@ -30,6 +35,8 @@ import { ListFichiersComptableComponent } from './list-fichiers-comptable/list-f
 
 @NgModule({
   declarations: [
+
+
     AppComponent,
     LoginComponent,
     RegisterComponent,
@@ -47,18 +54,23 @@ import { ListFichiersComptableComponent } from './list-fichiers-comptable/list-f
     ListDemandeClientComponent,
     ListDemandeComptablComponent,
     ListFichiersComptableComponent,
-    
-    
-    
-   
+    UploadFilesClientComponent,
+    UploadFileClientUploadingComponent,
+    EspaceMessagerieComponent,
+
+
+
+
 
   ],
   imports: [
+
     BrowserModule,
     AppRoutingModule,
     FormsModule ,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers:  [authInterceptorProviders
     ],

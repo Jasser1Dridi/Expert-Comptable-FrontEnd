@@ -9,34 +9,32 @@
 <br>
     <table class="table table-striped table-advance table-hover border">
       <tbody>
-      <tr>
+      <tr style="background: #d2c7ff">
 
-        <th></th>
-        <th class="center"> <i class="icon_profile"></i> Comptable</th>
-        <th class="center"><i class="icon_pin_alt"></i>Duree</th>
-        <th class="center"><i class="icon_calendar"></i>Date d'envoi </th>
-        <th class="center"><i class="icon_calendar"></i>Date d'acceptation </th>
-        <th class="center"><i class="icon_cogs"></i> Status</th>
+
+        <th class="center"> <i class="fa-solid fa-user" style="margin-right: 6px"></i><b>Comptable </b></th>
+        <th class="center"><i class="fa-solid fa-calendar" style="margin-right: 6px"></i><b>Duree</b></th>
+        <th class="center"><i class="fa-solid fa-clock" style="margin-right: 6px"></i>  <b>Date d'envoi </b></th>
+        <th class="center"><i class="fa-solid fa-clock" style="margin-right: 6px"></i> <b>Date d'acceptation</b> </th>
+        <th class="center"><i class="fa-brands fa-flickr" style="margin-right: 6px"></i> <b>Status</b></th>
+      </tr>
+
+
+
+
+      <tr *ngFor="let demande of listDemande">
+
+        <td class="center"> <span>{{demande.comptable.username}}</span></td>
+        <td class="center"><span>{{demande.duree}} ans </span></td>
+        <td class="center"><span>{{demande.dateD.substring(0,16).replace("T", " ") }}</span></td>
+        <td class="center "*ngIf="demande.dateAC!=null"><span>{{demande.dateAC.substring(0,16).replace("T", " ")}}</span></td>
+        <td class="center" *ngIf="demande.dateAC==null"> <span>--</span></td>
+        <td class="center" *ngIf="demande.etat==1" style="color:darkgreen"> <span>Accepté</span></td>
+        <td class="center" *ngIf="demande.etat==0" style="color:darkred"> <span>Refusée</span></td>
+        <td class="center" *ngIf="demande.etat==-1" style="color:darkgoldenrod"> <span>en Attend</span></td>
 
       </tr>
-      <tr >
-        <td><i class="fa fa-table"></i></td>
-        <td class="center"> <span>Eya</span></td>
-        <td class="center"><span>2</span></td>
-        <td class="center"><span>15/10/2022 20:45</span></td>
-        <td class="center"><span>16/10/2022 20:45</span></td>
-        <td class="center"><span style="color:red">Refuser</span></td>
 
-      </tr>
-      <tr >
-        <td><i class="fa fa-table"></i></td>
-        <td class="center"> <span>Eya</span></td>
-        <td class="center"><span>2</span></td>
-        <td class="center"><span>15/10/2022 20:45</span></td>
-        <td class="center"><span>16/10/2022 20:45</span></td>
-        <td class="center"><span style="color:green">Accepter</span></td>
-
-      </tr>
 
 <!--
       <tr *ngFor="let comptable of listDemande">

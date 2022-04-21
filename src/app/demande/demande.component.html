@@ -14,32 +14,48 @@
 <div class="form-body">
 
     <div class="form-holder">
-      <div class="form-content">
+
+      <div class="form-content" >
         <div class="form-items">
           <h3>traitement de demande </h3>
           <p>Nous vous reviendrons sans tarder</p>
+
           <form class="requires-validation" novalidate>
             <div class="col-md-12">
-              <label for="nom"> Nom de Comptable </label>
-              <input class="form-control" type="text" name="nom"  readonly="true" value="{{comptable.id}}">
+              <label for="id"> id de Comptable </label>
+              <input class="form-control" type="text" name="id" id="id" readonly value="{{ComptableObject.id}}" >
+
+              <br>
             </div>
             <div class="col-md-12">
               <label for="nom"> Nom de Comptable </label>
-              <input class="form-control" type="text" name="nom"  readonly value="{{comptable.id}}" >
-
+              <input class="form-control" type="text" name="nom" id="nom" readonly="true" value="{{ComptableObject.username}}">
             </div>
-
+            <br>
             <div class="col-md-12">
-              <label for="durée "> Durée  </label>
-              <input class="form-control" type="number" name="durée "   >
+              <label for="email"> email de Comptable </label>
+              <input class="form-control" type="text" name="email"  id="email"readonly value="{{ComptableObject.email}}" >
             </div>
 
+            <br>
+            <div class="col-md-12">
+              <label for="duree "> Durée  </label>
+              <input class="form-control" type="number" name="duree" id="duree"[(ngModel)]="duree" placeholder="Enter Durée">
+            </div>
+            <br>
             <div class="form-button mt-3">
               <button id="submit" type="submit" class="btn btn-primary" (click)="onSumbit()">Envoyer</button>
+
             </div>
           </form>
         </div>
       </div>
+      <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="clicked">
+        <strong>Votre demande a été envoyée avec succès</strong>
+
+      </div>
     </div>
+
   </div>
+
 

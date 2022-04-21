@@ -29,12 +29,13 @@ export class LoginComponent implements OnInit {
     const { username, password } = this.form;
     this.authService.login(username, password).subscribe({
       next: data => {
+        console.log(data);
         this.tokenStorage.saveToken(data.accessToken);
         this.tokenStorage.saveUser(data);
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getUser().roles;
-        this.reloadPage();
+       this.reloadPage();
 
         if(this.roles[0]== "ROLE_Client")
         {
@@ -43,7 +44,8 @@ export class LoginComponent implements OnInit {
         }
         if(this.roles[0]== "ROLE_Comptable")
         {
-          this.route.navigate(['/Client']);
+          this.route.navigate(['/Comptable'])
+          console.log(this.tokenStorage.getUser());
         }
         if(this.roles[0]== "ROLE_Admin")
         {

@@ -1,14 +1,19 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpParams,} from '@angular/common/http';
 import { observable, Observable } from 'rxjs';
-const API_URL = 'http://localhost:8080/api/test/';
+import {TokenStorageService} from "./token-storage.service";
+const API_URL = 'http://localhost:8080/api/auth/';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  constructor(private http: HttpClient) { }
+   headerss = {
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${this.tokenStorage.getUser().accessToken}`
+  }
+  constructor(private http: HttpClient,private tokenStorage: TokenStorageService ) { }
   getPublicContent(): Observable<any> {
     return this.http.get(API_URL + 'all', { responseType: 'text' });
   }
@@ -24,7 +29,7 @@ return this.http.get(API_URL + 'Client' ,{responseType: 'text'} ) ;
 getvente(): Observable<any> {
   return this.http.get(API_URL + 'Client' ,{responseType: 'text'} ) ;
   }
-  
+
   getPaix(): Observable<any> {
     return this.http.get(API_URL + 'Client' ,{responseType: 'text'} ) ;
     }
@@ -36,6 +41,40 @@ getvente(): Observable<any> {
   getAdminBoard(): Observable<any> {
     return this.http.get(API_URL + 'admin', { responseType: 'text' });
   }
- 
 
+
+
+  getUserById( id:string): Observable<any> {
+
+    return this.http.get(API_URL + `users/${id}`, {params:{'id':id}, responseType: 'json' });
+  }
+  saveDemande(comptableId:string,userId:string,duree:number)
+  {
+    console.log(comptableId);
+    console.log(userId);
+    console.log(duree);
+    return this.http.post(API_URL + `save`,{'idC':userId,'idComp':comptableId,'duree':duree},{ headers:this.headerss});
+  }
+
+
+
+  GetList_Comptable_Associated_With_Comptable(comptableId:number)
+  {
+       return this.http.get(`http://localhost:8080/api/auth/demande/comptable`,{ params:{"request":comptableId}});
+  }
+
+  onAccepter(idDemande:number)
+  {
+    return this.http.put(`http://localhost:8080/api/auth/demande/comptable/accept`,{ idDemande :idDemande },{headers:this.headerss})
+  }
+
+  onRefuse(id: number)
+  {
+    return this.http.put(`http://localhost:8080/api/auth/demande/comptable/refuse`,{ idDemande :id },{headers:this.headerss})
+  }
+
+  GetList_Client_Demande(id:number)
+  {
+    return this.http.get(`http://localhost:8080/api/auth/demande/client`,{ params:{idC :id }});
+  }
 }

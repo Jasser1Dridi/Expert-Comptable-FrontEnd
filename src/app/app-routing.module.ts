@@ -16,6 +16,12 @@ import { ListcomptableComponent } from './listcomptable/listcomptable.component'
 import { DemandeComponent } from './demande/demande.component';
 import {ListDemandeClientComponent} from "./list-demande-client/list-demande-client.component";
 import {ListDemandeComptablComponent} from "./list-demande-comptabl/list-demande-comptabl.component";
+import {ListFichiersComptableComponent} from "./list-fichiers-comptable/list-fichiers-comptable.component";
+import {UploadFilesClientComponent} from "./upload-files-client/upload-files-client.component";
+import {
+  UploadFileClientUploadingComponent
+} from "./upload-file-client-uploading/upload-file-client-uploading.component";
+import {EspaceMessagerieComponent} from "./espace-messagerie/espace-messagerie.component";
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -25,9 +31,13 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'Client', component: BoardUserComponent ,
     children:[{path:'listComptable' ,component: ListcomptableComponent},
-      {path:'listDemande',component:ListDemandeClientComponent}] },
+      {path:'listDemande',component:ListDemandeClientComponent},
+      {path:'uploadfile',component: UploadFilesClientComponent},
+      {path: 'uploadfile/uploadingFile/:id', component: UploadFileClientUploadingComponent},
+      {path: 'espaceMessagerie',component:EspaceMessagerieComponent }
+    ] },
   { path: 'Comptable', component: BoardModeratorComponent,
-    children: [{path:'listDemande',component: ListDemandeComptablComponent}]
+    children: [{path:'listDemande',component: ListDemandeComptablComponent},{path: 'listFiles' ,component:ListFichiersComptableComponent}]
   },
   { path: 'admin', component: BoardAdminComponent },
   //{ path: 'lcomptable', component: ListcomptableComponent },

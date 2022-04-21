@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {UserService} from "../services/user.service";
+import {TokenStorageService} from "../services/token-storage.service";
 
 @Component({
   selector: 'app-list-demande-client',
@@ -7,14 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListDemandeClientComponent implements OnInit {
 
-  listDemande=[];
-  constructor() { }
+  listDemande:any;
+  constructor(private userService:UserService,private tokenStorage: TokenStorageService) { }
 
   ngOnInit(): void
   {
-
+    this.GetList_Client_Demande()
   }
 
+  GetList_Client_Demande()
+  {
+    this.userService.GetList_Client_Demande(this.tokenStorage.getUser().id).subscribe(value => {this.listDemande=value;console.log(value)})
+  }
 
 
 }
