@@ -1,33 +1,272 @@
-.main {
-  background: red;
-  /*   take the remaining height of container using flex: 1 or height: 100% */
-  /*   flex: 1; */
-  height: 100%;
-  position: relative;
-
+.sideMain {float:left}
+.content {padding-left : 20px;float:left; }
+.vertical-menu {
 }
 
-.sidebar {
-  background: green;
+.vertical-menu a {
+  background-color: #eee; /* Grey background color */
+  color: black; /* Black text color */
+  display: block; /* Make the links appear below each other */
+  padding: 12px; /* Add some padding */
+  text-decoration: none; /* Remove underline from links */
+}
+
+.vertical-menu a:hover {
+  background-color: #ccc; /* Dark grey background on mouse-over */
+}
+
+.vertical-menu a.active {
+  background-color: #04AA6D; /* Add a green color to the "active/current" link */
   color: white;
+}
+div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: #1e81b0;
   padding: 5px;
-  /*   This will position w.r.t the .main div */
+  height: 94.375px;
+  font-size: 10px;
+}
+textarea {
+  position: -webkit-sticky;
+  position: sticky;
+
+}
+.box {
+  margin-bottom: 10px;
+  width: 382px;
+  background: #00bfb6;
+  padding: 20px;
+  text-align: center;
+  font-weight: 900;
+  color: #fff;
+  font-family: arial;
+  position: relative;
+  left: 15px;
+  top: 6px;
+  height: 94px;
+
+}
+.message
+{
+
+  text-align: left;
+  font-weight: 900;
+  color: #fff;
+  font-family: arial;
+}
+.dateBox
+{
+
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  color: #fff;
+  font-family: arial;
+}
+.sb2:before {
+  content: "";
+  width: 0px;
+  height: 0px;
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 10rem;
-  overflow-y: scroll;
+  border-left: 10px solid transparent;
+  border-right: 10px solid #00bfb6;
+  border-top: 10px solid #00bfb6;
+  border-bottom: 10px solid transparent;
+  left: -19px;
+  top: 6px;
 }
 
-.content {
+
+                                                     /* CSS */
+                                                   .button-66 {
+                                                     background-color: #1e81b0;
+                                                     border: 0;
+                                                     box-sizing: border-box;
+                                                     color: #fff;
+                                                     cursor: pointer;
+                                                     display: inherit;
+                                                     font-family: "Space Grotesk",-apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+                                                     font-size: 18px;
+                                                     font-weight: 700;
+                                                     line-height: 24px;
+                                                     margin: 0;
+                                                     min-height: 56px;
+                                                     width: 105.3px;
+                                                     padding: 16px 20px;
+                                                     position: relative;
+                                                     text-align: center;
+                                                     user-select: none;
+                                                     -webkit-user-select: none;
+                                                     touch-action: manipulation;
+                                                     vertical-align: baseline;
+                                                     transition: all .2s cubic-bezier(.22, .61, .36, 1);
+                                                   }
+
+.button-66:hover {
+  background-color: #18688d;
+}
+
+
+
+
+
+
+
+.containerContent {
+  width: 100%;
+  background: aqua;
+  margin: auto;
+  padding: 10px;
+}
+
+.one {
+
+  width: 30%;
+  float: left;
+}
+
+.two {
+  margin-left:40px;
+  height: 200px;
+}
+
+
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+
+
+
+
+
+.float-container {
+  padding: 20px;
+}
+
+.float-child {
+  width: 50%;
+  float: left;
+  padding: 20px;
+}
+select {
+  /* Reset Select */
+  appearance: none;
+  outline: 0;
+  border: 0;
+  box-shadow: none;
+  /* Personalize */
+  flex: 1;
+  padding: 0 1em;
+  color: #fff;
+  background-color: #cbcaca;
+  background-image: none;
+  cursor: pointer;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+/* Custom Select wrapper */
+.select {
+  position: relative;
+  display: flex;
+  width: 20em;
+  height: 3em;
+  border-radius: .25em;
+  overflow: hidden;
+}
+/* Arrow */
+.select::after {
+  content: '\25BC';
   position: absolute;
-  padding: 1rem;
   top: 0;
-  left: 18.8rem;
   right: 0;
-  bottom: 0;
-  overflow-y: scroll;
-  background: blue;
-  color: white;
+  padding: 1em;
+  background-color: #ffffff;
+  transition: .25s all ease;
+  pointer-events: none;
+}
+/* Transition */
+.select:hover::after {
+  color: #9e4f8f;
+}
+
+/* Other styles*/
+
+h1 {
+  margin: 0 0 0.25em;
+}
+a {
+  font-weight: bold;
+  text-decoration: none;
+  padding: .25em;
+  border-radius: .25em;
+  background: white;
+}
+
+
+
+                                                     /* CSS */
+                                                   .button-58 {
+                                                     align-items: center;
+                                                     background-color: #9e4f8f;
+                                                     border: 1px solid #9e4f8f;
+                                                     box-sizing: border-box;
+                                                     color: #fff;
+                                                     cursor: pointer;
+                                                     display: inline-flex;
+                                                     fill: #000;
+                                                     font-family: Inter,sans-serif;
+                                                     font-size: 16px;
+                                                     font-weight: 600;
+                                                     justify-content: center;
+                                                     letter-spacing: -.8px;
+                                                     line-height: 24px;
+                                                     min-width: 140px;
+                                                     outline: 0;
+                                                     text-align: center;
+                                                     text-decoration: none;
+                                                     transition: all .3s;
+                                                     user-select: none;
+                                                     -webkit-user-select: none;
+                                                     touch-action: manipulation;
+                                                     padding: 0 1em;  height: 3em
+                                                   }
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+button:disabled :hover,
+button[disabled]:hover{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+.button-58:focus {
+  color: #171e29;
+}
+
+.button-58:hover {
+  background-color: #7f3a72;
+
+
+}
+
+@media (min-width: 768px) {
+  .button-58 {
+    min-width: 170px;
+  }
+}
+#container {
+  display: flex;
+  width:100%
+}
+
+.column {
+  margin-left: -20px;
+  width: 30%;
+  float: left
+;
 }

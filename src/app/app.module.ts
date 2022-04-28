@@ -27,6 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UploadFilesClientComponent } from './upload-files-client/upload-files-client.component';
 import { UploadFileClientUploadingComponent } from './upload-file-client-uploading/upload-file-client-uploading.component';
 import { EspaceMessagerieComponent } from './espace-messagerie/espace-messagerie.component';
+import { EspaceMesagerieComptableComponent } from './espace-mesagerie-comptable/espace-mesagerie-comptable.component';
 
 
 
@@ -56,6 +57,7 @@ import { EspaceMessagerieComponent } from './espace-messagerie/espace-messagerie
     UploadFilesClientComponent,
     UploadFileClientUploadingComponent,
     EspaceMessagerieComponent,
+    EspaceMesagerieComptableComponent,
 
 
 

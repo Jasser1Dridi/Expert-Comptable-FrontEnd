@@ -1,0 +1,87 @@
+<!--
+<div>
+<input type="text">
+  <button type="button" > Create Canversation</button>
+
+</div>
+<div class="main" style="height: 350px">
+  <div class="sidebar vertical-menu " style="    height: 340px;
+    width: 300px;">
+
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+      <a href="#">Link 4</a>
+  </div>
+  </div>
+  <div class="main" style="height: 350px">
+
+    <div class="sidebar vertical-menu " style="
+    width: 300px;">
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+        <a href="#">Link 4</a>
+    </div>
+  <div class="content" style="height: 700px">
+    <h1>Scroll me </h1>
+          <textarea [readOnly]="clicked_crate_conv"></textarea>
+  </div>
+</div>
+
+<br>
+<br>
+<h2>Test</h2>
+<h2>Test</h2><h2>Test</h2><h2>Test</h2><h2>Test</h2> <br>
+<h2>Test</h2>
+<br>
+<h2>Test</h2>
+<br>
+
+!-->
+<div class="container" style="height:600px">
+  <div id="container" >
+
+
+
+  <hr>
+  <!--
+    <div  style="left: auto">
+
+      <div>
+        <label for="comptable"> List de Comptables </label>
+        <select id="comptable">
+        </select>
+      </div>
+    <hr>
+    </div>
+    !-->
+  <div class="sideMain" style="width:25%">
+    <div class="main2 vertical-menu" style="height:600px;background-color:  #eeeee4;overflow-y: scroll">
+      <a style="border: 1px solid black" *ngFor="let thread of allThreades.reverse()"  (click)="getMessages(thread)">
+        <i class="fa-solid fa-message fa-sm"></i> <span style="margin-left: 10px">{{thread.sujet}}</span></a>
+
+    </div>
+  </div>
+  <div class="content" style=" position: relative;background-color: #eeeee4;width:70%;height: 100%">
+    <div class="sticky" style="margin-left : -20px;">
+
+      <h3>  </h3>
+      <h5 *ngIf="currentThread !=  undefined " style="margin-left: 10px"> <i class="fa-solid fa-message fa-1x"  style="color:white"> </i> <span style="margin-left: 10px;color:white">{{this.currentThread.sujet}} </span></h5>
+      <h6 *ngIf="currentThread !=  undefined " style="margin-left: 10px"><i class="fa-solid fa-user fa-1x" style="color:white"></i> <span style="margin-left: 10px;color:white">{{this.currentReciver}}</span></h6>
+      <p *ngIf="currentThread !=  undefined " style="margin-left: 10px"><i class="fa-solid fa-clock fa-1x" style="color:white"></i> <span style="margin-left: 10px;color:white">{{this.currentThread.createdAt.substring(0,16).replace("T", " ")}} </span></p>
+
+    </div>
+
+    <div style="box-sizing: content-box;height:490px;overflow-y: scroll">
+      <div class="box sb2" *ngFor="let message of messages ">
+        <p class="message">{{message.contenu}}</p>
+        <p class="dateBox">{{message.sendAt.substring(0,16).replace("T", " ")}} </p>
+      </div>
+
+    </div >
+    <div style="width: 100%;">
+      <textarea  class="sticky" style="float:left;margin-left : -20px; bottom: 0px;width: 90%" [(ngModel)]="sujet"> </textarea>
+
+      <button class="button-66" type="submit" style="float:right;" (click)="submit()" [disabled]="sujet==''"> Envoyer</button>
+    </div>
+  </div>
+</div>

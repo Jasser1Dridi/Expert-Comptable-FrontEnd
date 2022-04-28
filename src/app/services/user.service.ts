@@ -8,10 +8,10 @@ const API_URL = 'http://localhost:8080/api/auth/';
   providedIn: 'root'
 })
 export class UserService {
-  
-  
-  
-  
+
+
+
+
 
 
    headerss = {
@@ -85,4 +85,5 @@ getvente(): Observable<any> {
   getUserNameByIdDemande(id: number) {
     return this.http.get(`http://localhost:8080/api/auth/demande/OneClient`,{ params:{idD :id }});
   }
+
 }

@@ -22,6 +22,7 @@ import {
   UploadFileClientUploadingComponent
 } from "./upload-file-client-uploading/upload-file-client-uploading.component";
 import {EspaceMessagerieComponent} from "./espace-messagerie/espace-messagerie.component";
+import {EspaceMesagerieComptableComponent} from "./espace-mesagerie-comptable/espace-mesagerie-comptable.component";
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -37,7 +38,11 @@ const routes: Routes = [
       {path: 'espaceMessagerie',component:EspaceMessagerieComponent }
     ] },
   { path: 'Comptable', component: BoardModeratorComponent,
-    children: [{path:'listDemande',component: ListDemandeComptablComponent},{path: 'listFiles' ,component:ListFichiersComptableComponent}]
+    children: [
+      {path:'listDemande',component: ListDemandeComptablComponent},
+      {path: 'listFiles' ,component:ListFichiersComptableComponent},
+      {path: 'espaceMessagerie',component: EspaceMesagerieComptableComponent}
+    ]
   },
   { path: 'admin', component: BoardAdminComponent },
   //{ path: 'lcomptable', component: ListcomptableComponent },
