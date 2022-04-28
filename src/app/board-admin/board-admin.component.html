@@ -1,5 +1,44 @@
+<br>
+<br><br>
 <div class="container">
-    <header class="jumbotron">
-      <p>{{ content }}</p>
-    </header>
-  </div>
+<section class="panel">
+
+      <h1 class="heading--serif jumbotron__title medium-offset-bottom-2">
+        Liste Des Utilisateurs               </h1>
+    <hr>
+
+ <br>
+ <br>
+
+
+
+
+<table class="table table-striped table-advance table-hover border">
+  <tbody>
+  <tr style="background: #d2c7ff">
+
+
+    <th class="center"> <i class="fa-solid fa-user" style="margin-right: 6px"></i><b> User Name </b></th>
+    <th class="center"><i class="fa-solid fa-envelope" style="margin-right: 6px"></i><b>Email</b></th>
+    <th class="center"><i class="fa-solid fa-location-pin" style="margin-right: 6px"></i>  <b>Adresse </b></th>
+    <th class="center"><i class="fa-solid fa-phone" style="margin-right: 6px"></i> <b>Numero Telephone</b> </th>
+    <th class="center"><i class="fa-solid fa-graduation-cap" style="margin-right: 6px"></i> <b>Ecole Superieur </b></th>
+
+    <th class="center"><i class="fa-solid fa-location-pin" style="margin-right: 6px"></i>  <b>nom d'entreprise </b></th>
+    <th class="center"><i class="fa-solid fa-computer-mouse" style="margin-right: 6px"></i> <b>Action</b></th>
+  </tr>
+  <tr *ngFor="let user of users">
+
+    <td class="center"> <span>{{user.username}}</span></td>
+    <td class="center"><span>{{user.email}}</span></td>
+    <td class="center"><span>{{user.adresse}}</span></td>
+    <td class="center"><span>{{user.numero_telephone}}</span></td>
+    <td class="center"><span>{{user.ecole_sperieur}}</span></td>
+    
+
+  </tr>
+
+  </tbody>
+</table>
+</section>
+</div>

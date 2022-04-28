@@ -2,6 +2,36 @@
 
 
 <div class="container">
+
+
+  <div class="col-md-12">
+    <label for="id"> id de recipient </label>
+    <input class="form-control" type="text" name="idR" id="id" readonly value="{{RecipientObject.id}}" >
+
+    <br>
+  </div>
+  <br>
+  <div class="col-md-12">
+    <label for="nom"> Nom de Recipient </label>
+    <input class="form-control" type="text" name="nomR" id="nom" readonly="true" value="{{RecipientObject.username}}">
+  </div>
+  
+  
+  
+  
+  
+  <br>
+  
+  <div class="col-md-12">
+    <label for="type "> type de fichier </label>
+    <input class="form-control" type="text" name="typeF" id="type"[(ngModel)]="type" placeholder="Enter type">
+  </div>
+
+  <br>
+
+
+
+
   <div class="row">
 
     <div style="margin:auto;width:500px">
@@ -10,6 +40,7 @@
       <input type="file" class="form-control"(change)="selectFile($event) " style="width: 500px" />
 
     </div>
+    <br>
     <div class="left">
       <button class="btn btn-success " [disabled]="!selectedFiles" (click)="upload()">
         Upload

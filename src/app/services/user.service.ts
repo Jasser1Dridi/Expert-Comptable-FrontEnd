@@ -12,6 +12,7 @@ export class UserService {
   
   
   
+  
 
 
    headerss = {
@@ -63,9 +64,14 @@ getvente(): Observable<any> {
 
 
 
-  GetList_Comptable_Associated_With_Comptable(comptableId:number)
+  GetList_Demande_Associated_With_Comptable(comptableId:number)
   {
        return this.http.get(`http://localhost:8080/api/auth/demande/comptable`,{ params:{"request":comptableId}});
+  }
+
+  GetComptableofClient(clientId:number){
+    return this.http.get(`http://localhost:8080/api/auth/client/comptable`);
+
   }
 
   onAccepter(idDemande:number)

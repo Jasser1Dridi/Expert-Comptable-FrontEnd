@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from "rxjs";
 import {FileUploadService} from "../services/file-upload.service";
-import {HttpEventType, HttpResponse} from "@angular/common/http";
+import {HttpClient, HttpEventType, HttpResponse} from "@angular/common/http";
 import {UserService} from "../services/user.service";
 
 @Component({
@@ -11,20 +11,29 @@ import {UserService} from "../services/user.service";
 })
 export class UploadFilesClientComponent implements OnInit {
 
-
-  constructor(private uploadService: FileUploadService,private userService:UserService) { }
+ compp!: any[]
+ private _route: any;
+  constructor(private uploadService: FileUploadService,private  httpClient: HttpClient) { }
+ 
   ngOnInit(): void {
-    this.GetList_Comptable_Associated_With_Comptable();
+    this.GetComptableofClient();}
 
     // recuperer la liste des comptables associe a cet client
     // requete "/api/auth/client/comptable"
     // mettre la liste des comptables dans un tableau pour afficher dans liste deroulante
     // comptable.user.id != comptable.id
+  
+
+  
+  GetComptableofClient()
+  {
+    this.httpClient.get<any>('http://localhost:8080/api/auth/client/comptable').subscribe(
+    response => {
+        console.log(response);
+        this.compp = response;
+      }
+    );
   }
 
-  ListComptable:any;
-  GetList_Comptable_Associated_With_Comptable()
-  {
-    this.userService.GetList_Comptable_Associated_With_Comptable(2).subscribe(value => { this.ListComptable=value;  console.log(value)      }  )
-  }
+ 
 }
