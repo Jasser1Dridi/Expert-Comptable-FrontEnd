@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PaixComponent } from './paix.component';
+import { DocumentPartagerComponent } from './document-partager.component';
 
-describe('PaixComponent', () => {
-  let component: PaixComponent;
-  let fixture: ComponentFixture<PaixComponent>;
+describe('DocumentPartagerComponent', () => {
+  let component: DocumentPartagerComponent;
+  let fixture: ComponentFixture<DocumentPartagerComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PaixComponent ]
+      declarations: [ DocumentPartagerComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PaixComponent);
+    fixture = TestBed.createComponent(DocumentPartagerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -4,7 +4,7 @@
 <section class="panel">
 
       <h1 class="heading--serif jumbotron__title medium-offset-bottom-2">
-        Liste Des Utilisateurs               </h1>
+        Liste Des Clients             </h1>
     <hr>
 
  <br>
@@ -24,7 +24,8 @@
     <th class="center"><i class="fa-solid fa-phone" style="margin-right: 6px"></i> <b>Numero Telephone</b> </th>
     <th class="center"><i class="fa-solid fa-graduation-cap" style="margin-right: 6px"></i> <b>Ecole Superieur </b></th>
 
-    <th class="center"><i class="fa-solid fa-location-pin" style="margin-right: 6px"></i>  <b>nom d'entreprise </b></th>
+    <th class="center"><i class="fa-solid fa-clock" style="margin-right: 6px"></i> <b>état du client</b> </th>
+
     <th class="center"><i class="fa-solid fa-computer-mouse" style="margin-right: 6px"></i> <b>Action</b></th>
   </tr>
   <tr *ngFor="let user of users">
@@ -34,7 +35,14 @@
     <td class="center"><span>{{user.adresse}}</span></td>
     <td class="center"><span>{{user.numero_telephone}}</span></td>
     <td class="center"><span>{{user.ecole_sperieur}}</span></td>
-    
+    <td class="center" *ngIf="user.block==1" style="color:darkred"> <span>client bloqué</span></td>
+        <td class="center" *ngIf="user.block==0" style="color:darkgreen"> <span>client débloqué</span></td>
+        
+        <td class="cell100 column6 center">
+          <button class="btn btn-danger" [disabled]="user.block == 1 " (click)="onBloque(user.id, 1)" >Bloquer</button>
+          <button class="btn btn-success" [disabled]="user.block == 0" (click)="onBloque(user.id , 0)" >Débloquer</button>
+        </td>
+  
 
   </tr>
 

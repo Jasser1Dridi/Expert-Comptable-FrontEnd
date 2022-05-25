@@ -1,0 +1,87 @@
+<div class="container">
+
+
+  
+  
+    <div class="col-md-12">
+      <label for="nom"> Nom du client </label>
+      <input class="form-control" type="text" name="nomR" id="nom" readonly="true" value="{{RecipientObject.username}}">
+    </div>
+    
+    
+    
+    
+    
+    <br>
+    
+    <div class="col-md-12">
+      <label for="type "> type de déclaration </label>
+      <input class="form-control" type="text" name="type" id="type"[(ngModel)]="type" placeholder="Enter type">
+    </div>
+  
+    <br>
+
+    <div class="col-md-12">
+        <label for="type "> nom de la déclaration </label>
+        <input class="form-control" type="text" name="nameD" id="type"[(ngModel)]="nameD" placeholder="Enter nom ">
+      </div>
+    
+      <br>
+
+      <div class="col-md-12">
+        <label for="type "> Montant </label>
+        <input class="form-control" type="text" name="Montant" id="Montant"[(ngModel)]="Montant" placeholder="Enter montant">
+      </div>
+    
+      <br>
+
+
+      <div class="row">
+
+        <div style="margin:auto;width:500px">
+        <div class="right ">
+    
+          <input type="file" class="form-control"(change)="selectFile($event) " style="width: 500px" />
+    
+        </div>
+        <br>
+        <div class="left">
+          <button class="btn btn-success " [disabled]="!selectedFiles" (click)="uploadd()">
+            Upload
+          </button>
+        </div>
+    
+    
+    
+        <div *ngIf="currentFile"  class="progress my-3">
+          <div
+            class=" progress-bar bg-success "
+            role="progressbar"
+            attr.aria-valuenow="{{ progress }}"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            [ngStyle]="{ width: progress + '%' }"
+          >
+            {{ progress }}%
+          </div>
+        </div>
+        <div *ngIf="message" class="alert alert-secondary" role="alert">{{ message }}</div>
+        <div class="card mt-3">
+    
+          <ul
+            class="list-group list-group-flush"
+            *ngFor="let file of fileInfos | async">
+            <li class="list-group-item">
+              <a href="{{ file.url }}">{{ file.name }}</a>
+            </li>
+          </ul>
+        </div>
+    
+        </div>
+      </div>
+    </div>
+    
+  
+  
+  
+   

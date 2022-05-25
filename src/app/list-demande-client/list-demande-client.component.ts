@@ -22,5 +22,11 @@ export class ListDemandeClientComponent implements OnInit {
     this.userService.GetList_Client_Demande(this.tokenStorage.getUser().id).subscribe(value => {this.listDemande=value;console.log(value)})
   }
 
+  getDate(d:any){
+    let ds = new Date(d);
+    if (d ==null) return "---"
+    else  return ds;
+  }
+
 
 }

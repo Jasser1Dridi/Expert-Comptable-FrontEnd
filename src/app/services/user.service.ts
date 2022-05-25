@@ -9,11 +9,6 @@ const API_URL = 'http://localhost:8080/api/auth/';
 })
 export class UserService {
   
-  
-  
-  
-  
-
 
    headerss = {
     'Content-Type': 'application/json',
@@ -26,20 +21,6 @@ export class UserService {
   getUserBoard(): Observable<any> {
     return this.http.get(API_URL + 'Client', { responseType: 'text' });
   }
-
-getAchat(): Observable<any> {
-return this.http.get(API_URL + 'Client' ,{responseType: 'text'} ) ;
-}
-
-
-getvente(): Observable<any> {
-  return this.http.get(API_URL + 'Client' ,{responseType: 'text'} ) ;
-  }
-
-  getPaix(): Observable<any> {
-    return this.http.get(API_URL + 'Client' ,{responseType: 'text'} ) ;
-    }
-
 
   getModeratorBoard(): Observable<any> {
     return this.http.get(API_URL + 'Comptable', { responseType: 'text' });
@@ -54,6 +35,9 @@ getvente(): Observable<any> {
 
     return this.http.get(API_URL + `users/${id}`, {params:{'id':id}, responseType: 'json' });
   }
+
+
+
   saveDemande(comptableId:string,userId:string,duree:number)
   {
     console.log(comptableId);
@@ -68,6 +52,10 @@ getvente(): Observable<any> {
   {
        return this.http.get(`http://localhost:8080/api/auth/demande/comptable`,{ params:{"request":comptableId}});
   }
+  GetList_fichier_partager_With_Comptable(comptableId:number)
+  {
+       return this.http.get(`http://localhost:8080/api/auth/user/file/recieve`,{ params:{"request":comptableId}});
+  }
 
   GetComptableofClient(clientId:number){
     return this.http.get(`http://localhost:8080/api/auth/client/comptable`);
@@ -78,6 +66,18 @@ getvente(): Observable<any> {
   {
     return this.http.put(`http://localhost:8080/api/auth/demande/comptable/accept`,{ idDemande :idDemande },{headers:this.headerss})
   }
+
+  traiter(idFile:number)
+  {
+    return this.http.post(`http://localhost:8080/api/auth/file/comptable/markerTraite`,{ idFile :idFile },{headers:this.headerss})
+  }
+
+
+  Encours(id: number)
+  {
+    return this.http.post(`http://localhost:8080/api/auth/file/comptable/markerEnCours`,{ idFile :id },{headers:this.headerss})
+  }
+
 
   onRefuse(id: number)
   {
@@ -90,5 +90,20 @@ getvente(): Observable<any> {
   }
   getUserNameByIdDemande(id: number) {
     return this.http.get(`http://localhost:8080/api/auth/demande/OneClient`,{ params:{idD :id }});
+  }
+ 
+
+  EditUser(id: any, user: any): Observable<any> {
+    console.log(JSON.stringify(user));
+    return this.http.put('http://localhost:8080/api/auth/users/' + id ,user);
+  }
+  EditComptable(id: any, user:any): Observable<any> {
+    return this.http.put('http://localhost:8080/api/auth/users/'+ id +"/comptable" ,user);
+  }
+  EditClient(id: any, user:any): Observable<any> {
+    return this.http.put('http://localhost:8080/api/auth/users/'+ id +"/client" ,user);
+  }
+  BlockUser(id: any, block: any): Observable<any> {
+    return this.http.put('http://localhost:8080/api/auth/block/'+ id ,{"block":block});
   }
 }

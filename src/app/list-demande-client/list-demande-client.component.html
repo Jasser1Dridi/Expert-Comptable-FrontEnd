@@ -26,9 +26,8 @@
 
         <td class="center"> <span>{{demande.comptable.username}}</span></td>
         <td class="center"><span>{{demande.duree}} ans </span></td>
-        <td class="center"><span>{{demande.dateD.substring(0,16).replace("T", " ") }}</span></td>
-        <td class="center "*ngIf="demande.dateAC!=null"><span>{{demande.dateAC.substring(0,16).replace("T", " ")}}</span></td>
-        <td class="center" *ngIf="demande.dateAC==null"> <span>--</span></td>
+        <td class="center"><span>{{getDate(demande.dateD)}}</span></td>
+        <td class="center "><span>{{getDate(demande.dateAC)}}</span></td>
         <td class="center" *ngIf="demande.etat==1" style="color:darkgreen"> <span>Accepté</span></td>
         <td class="center" *ngIf="demande.etat==0" style="color:darkred"> <span>Refusée</span></td>
         <td class="center" *ngIf="demande.etat==-1" style="color:darkgoldenrod"> <span>en Attend</span></td>

@@ -44,7 +44,7 @@ export class ListDemandeComptablComponent implements OnInit {
     
     this.listDemande=value;
     this.listDemande.forEach((element: { [x: string]: Object; id: number; }) => {
-      this.userService.getUserNameByIdDemande(element.id).subscribe(value =>{element['client']=value})
+    this.userService.getUserNameByIdDemande(element.id).subscribe(value =>{element['client']=value})
      
       
     });

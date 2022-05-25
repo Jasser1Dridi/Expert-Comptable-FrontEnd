@@ -1,17 +1,188 @@
+<div class="card">
+  <div class="card-body profile">
+    <diV><h4 class="card-title">Informations personnelles:</h4></diV>
+    <div class="table-responsive">
+      <table class="table align-middle">
+        <tr>
+          <td>
+            <img
+              src="..\assets\user_logo2.png"
+              alt="user"
+              class="rounded-circle"
+              width="100"
+            />
+          </td>
+          <td>
+            <h5><br />Mon compte</h5>
+            <h6>
+              Bienvenue sur votre espace ! ici vous pouvez changer vos
+              informations personnelles
+            </h6>
+          </td>
+        </tr>
+      </table>
+      <div class="table-responsive">
+        <table class="table align-middle">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-lg-6">
+                <div>
+                  <form (ngSubmit)="onSubmit()">
+                    <div>
+                      <div>
+                        <form
+                          name="form"
+                          (ngSubmit)="onSubmit()"
+                          #f="ngForm"
+                          novalidate
+                        >
+                          <div class="form-group">
+                            <tr>
+                              <span *ngIf="user && user.email"></span>
+                              <label for="email">Email</label>
+                              <input
+                                style="width: 400px"
+                                *ngIf="user && user.email"
+                                type="text"
+                                class="form-control"
+                                name="email"
+                                [(ngModel)]="user.email"
+                                required
+                                #email="ngModel"
+                              />
+                            </tr>
+
+                            <tr>
+                              <span *ngIf="user && user.nom_entreprise">
+                              <label for="nom_entreprise"
+                                >Nom de l'entreprise</label
+                              >
+
+                              <input
+                                style="width: 400px"
+                                *ngIf="user && user.nom_entreprise"
+                                type="text"
+                                class="form-control"
+                                name="nom_entreprise"
+                                [(ngModel)]="user.nom_entreprise"
+                                required
+                                #nom_entreprise="ngModel"
+                                minlength="3"
+                                maxlength="20"
+                              />
+                              </span>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                              <span *ngIf="user && user.adresse">
+                                <label for="adresse">adresse</label>
+                                <input
+                                  style="width: 400px"
+                                  *ngIf="user && user.adresse"
+                                  type="text"
+                                  class="form-control"
+                                  name="adresse"
+                                  [(ngModel)]="user.adresse"
+                                  required
+                                  #adresse="ngModel"
+                                />
+                              </span>
+                            </tr>
+                            <tr>
+                              <span *ngIf="user && user.username">
+                                <label for="username">username</label>
+                                <input
+                                  style="width: 400px"
+                                  *ngIf="user && user.username"
+                                  type="text"
+                                  class="form-control"
+                                  name="username"
+                                  [(ngModel)]="user.username"
+                                  required
+                                  #username="ngModel"
+                                />
+                              </span>
+                            </tr>
+                            <tr>
+                              <span *ngIf="user && user.ecole_sperieur">
+                                <label for="ecole_sperieur"
+                                  >ecole_sperieur</label
+                                >
+                                <input
+                                  style="width: 400px"
+                                  *ngIf="user && user.ecole_sperieur"
+                                  type="text"
+                                  class="form-control"
+                                  name="ecole_sperieur"
+                                  [(ngModel)]="user.ecole_sperieur"
+                                  required
+                                  #ecole_sperieur="ngModel"
+                                />
+                              </span>
+                            </tr>
+                            <tr>
+                              <span *ngIf="user && user.numero_telephone">
+                                <label for="numero_telephone"
+                                  >numero_telephone</label
+                                >
+                                <input
+                                  style="width: 400px"
+                                  *ngIf="user && user.numero_telephone"
+                                  type="text"
+                                  class="form-control"
+                                  name="numero_telephone"
+                                  [(ngModel)]="user.numero_telephone"
+                                  required
+                                  #numero_telephone="ngModel"
+                                />
+                              </span>
+                            </tr>
+                          </div>
+                          <br />
+
+                          <button
+                            class="btn btn-primary btn-block"
+                            type="submit"
+                          >
+                            Modifier
+                          </button>
+                        </form>
+                        <div class="alert alert-success" *ngIf="isLoggedIn">
+                          Modifié(e) avec succées.
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!--
 <div class="container" *ngIf="currentUser; else loggedOut">
+
     <header class="jumbotron">
       <h3>
-        <strong>{{ currentUser.username }}</strong> Profile
+        <strong>{{ currentUser.username }}</strong> 
       </h3>
     </header>
+
     <p>
       <strong>Token:</strong>
       {{ currentUser.accessToken.substring(0, 20) }} ...
       {{ currentUser.accessToken.substr(currentUser.accessToken.length - 20) }}
     </p>
-    <p>
+    <p> 
       <strong>Email:</strong>
       {{ currentUser.email }}
+    </p>
+    <p>
+      <strong>nom_entreprise:</strong>
+      {{ currentUser.nom_entreprise }}
     </p>
     <strong>Roles:</strong>
     <ul>
@@ -23,3 +194,5 @@
   <ng-template #loggedOut>
     Please login.
   </ng-template>
+  !-->
+</div>

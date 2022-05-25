@@ -8,9 +8,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { BoardUserComponent } from './board-user/board-user.component';
 import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
-import { PaixComponent } from './paix/paix.component';
-import { VenteComponent } from './vente/vente.component';
-import { AchatComponent } from './achat/achat.component';
+
 import { RegisterComptableComponent } from './register-comptable/register-comptable.component';
 import { ListcomptableComponent } from './listcomptable/listcomptable.component';
 import { DemandeComponent } from './demande/demande.component';
@@ -22,6 +20,10 @@ import {
   UploadFileClientUploadingComponent
 } from "./upload-file-client-uploading/upload-file-client-uploading.component";
 import {EspaceMessagerieComponent} from "./espace-messagerie/espace-messagerie.component";
+import {EspaceMesagerieComptableComponent} from "./espace-mesagerie-comptable/espace-mesagerie-comptable.component";
+import { UploadDeclarationComponent } from './upload-declaration/upload-declaration.component';
+import { DocumentPartagerComponent } from './document-partager/document-partager.component';
+import { DeclarationComponent } from './declaration/declaration.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -33,18 +35,25 @@ const routes: Routes = [
     children:[{path:'listComptable' ,component: ListcomptableComponent},
       {path:'listDemande',component:ListDemandeClientComponent},
       {path:'uploadfile',component: UploadFilesClientComponent},
+     
       {path: 'uploadfile/uploadingFile/:id', component: UploadFileClientUploadingComponent},
       {path: 'espaceMessagerie',component:EspaceMessagerieComponent }
     ] },
   { path: 'Comptable', component: BoardModeratorComponent,
-    children: [{path:'listDemande',component: ListDemandeComptablComponent},{path: 'listFiles' ,component:ListFichiersComptableComponent}]
+    children: [
+      {path:'listDemande',component: ListDemandeComptablComponent},
+      {path: 'listFiles' ,component:ListFichiersComptableComponent},
+      {path: 'espaceMessagerie',component: EspaceMesagerieComptableComponent},
+      {path:'ulpoaddeclaration',component: UploadDeclarationComponent},
+      {path:'ulpoaddeclaration/propriétes du declartion/:id',component: DeclarationComponent},
+
+     { path:'partage',component: DocumentPartagerComponent}
+    ]
   },
   { path: 'admin', component: BoardAdminComponent },
   //{ path: 'lcomptable', component: ListcomptableComponent },
 
-  { path: 'achat', component: AchatComponent },
-  { path: 'vente', component: VenteComponent },
-  { path: 'paix', component: PaixComponent },
+  
   { path: 'demande/:id',  component: DemandeComponent},
 
 

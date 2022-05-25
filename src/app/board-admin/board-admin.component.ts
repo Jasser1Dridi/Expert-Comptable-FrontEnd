@@ -12,17 +12,19 @@ export class BoardAdminComponent implements OnInit {
 
   users!:any[];
   private _route: any;
-  constructor( private  httpClient: HttpClient) { }
+  block: any;
+  id: any;
+  constructor( private  httpClient: HttpClient,  private service: UserService) { }
   
   
   ngOnInit(): void {
-    this.getusers();
+    this.getComptable();
 
   }
   
   
-  getusers(){
-    this.httpClient.get<any>('http://localhost:8080/api/auth/users').subscribe(
+  getComptable(){
+    this.httpClient.get<any>('http://localhost:8080/api/auth/comptablee').subscribe(
     response => {
         console.log(response);
         this.users = response;
@@ -30,4 +32,12 @@ export class BoardAdminComponent implements OnInit {
       );
     }
     
+
+    onBloque(id:number , block: number){
+      this.service.BlockUser(id, block).subscribe(result => {
+        block == 1 ? alert("Vous avez bloquée l'utilisateur !!") :  alert("Vous avez débloquée l'utilisateur !!");
+        window.location.reload();
+          });
+     
     }
+}

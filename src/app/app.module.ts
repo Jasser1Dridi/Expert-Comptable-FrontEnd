@@ -14,9 +14,7 @@ import { authInterceptorProviders } from './helpers/auth.interceptor';
 import { BoardUserComponent } from './board-user/board-user.component';
 import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
-import { AchatComponent } from './achat/achat.component';
-import { VenteComponent } from './vente/vente.component';
-import { PaixComponent } from './paix/paix.component';
+
 import { RegisterComptableComponent } from './register-comptable/register-comptable.component';
 import { ListcomptableComponent } from './listcomptable/listcomptable.component';
 import {DemandeComponent} from './demande/demande.component';
@@ -27,6 +25,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UploadFilesClientComponent } from './upload-files-client/upload-files-client.component';
 import { UploadFileClientUploadingComponent } from './upload-file-client-uploading/upload-file-client-uploading.component';
 import { EspaceMessagerieComponent } from './espace-messagerie/espace-messagerie.component';
+import { EspaceMesagerieComptableComponent } from './espace-mesagerie-comptable/espace-mesagerie-comptable.component';
+import { UploadDeclarationComponent } from './upload-declaration/upload-declaration.component';
+import { DeclarationComponent } from './declaration/declaration.component';
+import { DocumentPartagerComponent } from './document-partager/document-partager.component';
+
 
 
 
@@ -44,9 +47,7 @@ import { EspaceMessagerieComponent } from './espace-messagerie/espace-messagerie
     BoardAdminComponent,
     BoardModeratorComponent,
     BoardUserComponent,
-    AchatComponent,
-    VenteComponent,
-    PaixComponent,
+    
     RegisterComptableComponent,
     ListcomptableComponent,
     DemandeComponent,
@@ -56,7 +57,11 @@ import { EspaceMessagerieComponent } from './espace-messagerie/espace-messagerie
     UploadFilesClientComponent,
     UploadFileClientUploadingComponent,
     EspaceMessagerieComponent,
-
+    EspaceMesagerieComptableComponent,
+    UploadDeclarationComponent,
+    DeclarationComponent,
+    DocumentPartagerComponent,
+   
 
 
 

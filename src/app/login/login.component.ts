@@ -30,32 +30,38 @@ export class LoginComponent implements OnInit {
     this.authService.login(username, password).subscribe({
       next: data => {
         console.log(data);
-        this.tokenStorage.saveToken(data.accessToken);
-        this.tokenStorage.saveUser(data);
-        this.isLoginFailed = false;
-        this.isLoggedIn = true;
-        this.roles = this.tokenStorage.getUser().roles;
-       this.reloadPage();
-
-        if(this.roles[0]== "ROLE_Client")
-        {
-
-          this.route.navigate(['/Client']);
+        if (data.message) {
+         alert("Vous étes bloquée !!");
         }
-        if(this.roles[0]== "ROLE_Comptable")
-        {
-          this.route.navigate(['/Comptable'])
-          console.log(this.tokenStorage.getUser());
+        else {
+          this.tokenStorage.saveToken(data.accessToken);
+          this.tokenStorage.saveUser(data);
+          this.isLoginFailed = false;
+          this.isLoggedIn = true;
+          this.roles = this.tokenStorage.getUser().roles;
+         this.reloadPage();
+  
+          if(this.roles[0]== "ROLE_Client")
+          {
+  
+            this.route.navigate(['/Client']);
+          }
+          if(this.roles[0]== "ROLE_Comptable")
+          {
+            this.route.navigate(['/Comptable'])
+            console.log(this.tokenStorage.getUser());
+          }
+          if(this.roles[0]== "ROLE_Admin")
+          {
+            this.route.navigate(['/admin']);
+          }
         }
-        if(this.roles[0]== "ROLE_Admin")
-        {
-          this.route.navigate(['/admin']);
         }
-      },
-      error: err => {
-        this.errorMessage = err.error.message;
-        this.isLoginFailed = true;
-      }
+        ,
+        error: err => {
+          this.errorMessage = err.error.message;
+          this.isLoginFailed = true;
+        }
     });
   }
   reloadPage(): void {
